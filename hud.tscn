@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://pgte61lel7y5"]
+
+[ext_resource type="Theme" uid="uid://b0s0m4h7o73pk" path="res://resources/score_theme.tres" id="1_lpukx"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_r3a5g"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_r3a5g")
+
+[node name="Margin" type="MarginContainer" parent="."]
+offset_right = 72.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="Score" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/Score"]
+layout_mode = 2
+theme = ExtResource("1_lpukx")
+text = "Score:"
+horizontal_alignment = 2
+
+[node name="Value" type="Label" parent="Margin/Score"]
+layout_mode = 2
+theme = ExtResource("1_lpukx")
+text = "0"
