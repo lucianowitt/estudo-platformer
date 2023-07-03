@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://pgte61lel7y5"]
+[gd_scene load_steps=7 format=3 uid="uid://cied6l3vodadh"]
 
-[ext_resource type="Theme" uid="uid://b0s0m4h7o73pk" path="res://resources/score_theme.tres" id="1_lpukx"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_r3a5g"]
+[ext_resource type="Script" path="res://scripts/player_life.gd" id="2_kaasb"]
+[ext_resource type="Texture2D" uid="uid://xddjl2ukh570" path="res://assets/Mini FX, Items & UI/Mini UI/Health_Indicator_Black_Outline (8 x 8).png" id="3_d48rp"]
+[ext_resource type="Script" path="res://scripts/digit.gd" id="5_arloa"]
+[ext_resource type="Texture2D" uid="uid://bmg03m645hngf" path="res://assets/Mini FX, Items & UI/Mini UI/Timer_Coin_Numbers_Outlined (8 x 8).png" id="5_ka4wb"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="5_smids"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_r3a5g")
@@ -12,16 +16,142 @@ offset_bottom = 40.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="Score" type="HBoxContainer" parent="Margin"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Margin/Score"]
+[node name="PlayerLife" type="HBoxContainer" parent="Margin/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_lpukx")
-text = "Score:"
-horizontal_alignment = 2
+script = ExtResource("2_kaasb")
 
-[node name="Value" type="Label" parent="Margin/Score"]
+[node name="Heart1" type="Control" parent="Margin/VBoxContainer/PlayerLife"]
+custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-theme = ExtResource("1_lpukx")
-text = "0"
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/PlayerLife/Heart1"]
+texture = ExtResource("3_d48rp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Heart2" type="Control" parent="Margin/VBoxContainer/PlayerLife"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/PlayerLife/Heart2"]
+texture = ExtResource("3_d48rp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Heart3" type="Control" parent="Margin/VBoxContainer/PlayerLife"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/PlayerLife/Heart3"]
+texture = ExtResource("3_d48rp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Heart4" type="Control" parent="Margin/VBoxContainer/PlayerLife"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/PlayerLife/Heart4"]
+texture = ExtResource("3_d48rp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Heart5" type="Control" parent="Margin/VBoxContainer/PlayerLife"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/PlayerLife/Heart5"]
+texture = ExtResource("3_d48rp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="Score" type="HBoxContainer" parent="Margin/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Control" parent="Margin/VBoxContainer/Score"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Margin/VBoxContainer/Score/Label"]
+texture = ExtResource("5_ka4wb")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)
+
+[node name="Value" type="HBoxContainer" parent="Margin/VBoxContainer/Score"]
+layout_mode = 2
+script = ExtResource("5_smids")
+
+[node name="Digit1" type="Control" parent="Margin/VBoxContainer/Score/Value"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+script = ExtResource("5_arloa")
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/Score/Value/Digit1"]
+texture = ExtResource("5_ka4wb")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Digit2" type="Control" parent="Margin/VBoxContainer/Score/Value"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+script = ExtResource("5_arloa")
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/Score/Value/Digit2"]
+texture = ExtResource("5_ka4wb")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Digit3" type="Control" parent="Margin/VBoxContainer/Score/Value"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+script = ExtResource("5_arloa")
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/Score/Value/Digit3"]
+texture = ExtResource("5_ka4wb")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Digit4" type="Control" parent="Margin/VBoxContainer/Score/Value"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+script = ExtResource("5_arloa")
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/Score/Value/Digit4"]
+texture = ExtResource("5_ka4wb")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Digit5" type="Control" parent="Margin/VBoxContainer/Score/Value"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+script = ExtResource("5_arloa")
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/Score/Value/Digit5"]
+texture = ExtResource("5_ka4wb")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Digit6" type="Control" parent="Margin/VBoxContainer/Score/Value"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+script = ExtResource("5_arloa")
+
+[node name="Texture" type="Sprite2D" parent="Margin/VBoxContainer/Score/Value/Digit6"]
+texture = ExtResource("5_ka4wb")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)

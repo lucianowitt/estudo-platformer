@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var animation := $AnimatedSprite2D
 
+@onready var hud = get_node("/root/Game/HUD") as Hud
+
 @export var points := 10
 
 var collected := false
@@ -12,7 +14,6 @@ func _on_body_entered(body: Node2D):
 		if body is Player:
 			collected = true
 			animation.play("collect")
-			var hud = get_node("/root/Game/HUD")
 			hud.score_add(points)
 
 
